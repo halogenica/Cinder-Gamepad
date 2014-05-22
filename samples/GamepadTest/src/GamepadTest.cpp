@@ -29,7 +29,7 @@ void onButtonUp(struct Gamepad_device * device, unsigned int buttonID, double ti
 
 void onAxisMoved(struct Gamepad_device * device, unsigned int axisID, float value, float lastValue, double timestamp, void * context) 
 {
-    if (verbose) 
+    if (verbose && (value < 0.2f || value > 0.2)) // reduce the output noise by making a dead zone
     {
         console() << "Axis " << axisID << " moved from " << lastValue <<" to " << value << " on device " << device->deviceID << " at " << timestamp << " with context " << context << std::endl;
     }
