@@ -1,0 +1,16 @@
+version: 1.0.{build}
+configuration:
+- Debug
+- Release
+platform: Any CPU
+environment:
+  CINDERDIR: c:\sdk\cinder
+build:
+  project: vc2015\gamepad.sln
+  verbosity: minimal
+artifacts:
+- path: lib\msw\x86
+  name: Gamepad_d.lib
+- path: lib\msw\x86
+  name: Gamepad.lib
+  
