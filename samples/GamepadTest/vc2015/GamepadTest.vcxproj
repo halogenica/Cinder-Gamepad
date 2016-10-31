@@ -57,14 +57,14 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
       <AdditionalIncludeDirectories>..\..\..\..\..\include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>Gamepad_d.lib;winmm.lib;cinder-v140_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gamepad_d.lib;winmm.lib;cinder-$(PlatformToolset)_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\..\lib\msw;..\..\..\..\..\lib\msw\x86;..\..\..\lib\msw\x86</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -93,7 +93,7 @@
       <AdditionalIncludeDirectories>..\..\..\..\..\include;..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>Gamepad.lib;winmm.lib;cinder-v140.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>gamepad.lib;winmm.lib;cinder-$(PlatformToolset).lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\..\lib\msw;..\..\..\..\..\lib\msw\x86;..\..\..\lib\msw\x86</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
@@ -110,13 +110,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ResourceCompile Include="Resources.rc" />
+    <ResourceCompile Include="resources.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\GamepadTest.cpp" />
+    <ClCompile Include="..\src\gamepadtest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\include\resources.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
